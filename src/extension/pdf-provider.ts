@@ -17,14 +17,14 @@ export class PdfCustomProvider implements vscode.CustomReadonlyEditorProvider {
 
   public async resolveCustomEditor(
     document: vscode.CustomDocument,
-    webviewEditor: vscode.WebviewPanel
+    webviewEditor: vscode.WebviewPanel,
   ): Promise<void> {
     const registerLinkMessageHandler =
       this._goToPDFLocationHandler.handleRegisterLinkMessageForPdf(
-        document.uri.fsPath
+        document.uri.fsPath,
       )
     const clearLinksMessageHandler = async (
-      _msg: WebviewVSCodeClearLinksMessage
+      _msg: WebviewVSCodeClearLinksMessage,
     ) => {
       await this._goToPDFLocationHandler.clearLinksForPdf(document.uri.fsPath)
       const msg: VSCodeWebviewLinkRegisterReadyMessage = {
@@ -38,7 +38,7 @@ export class PdfCustomProvider implements vscode.CustomReadonlyEditorProvider {
       document.uri,
       webviewEditor,
       registerLinkMessageHandler,
-      clearLinksMessageHandler
+      clearLinksMessageHandler,
     )
     this._previews.add(preview)
     this.setActivePreview(preview)

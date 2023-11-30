@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
     "target": "es6",
     "outDir": "out",
     "lib": ["es6", "dom"],
@@ -11,9 +10,9 @@
     // "noImplicitReturns": true, /* Report error when not all code paths in function return a value. */
     // "noFallthroughCasesInSwitch": true, /* Report errors for fallthrough cases in switch statement. */
     // "noUnusedParameters": true,  /* Report errors on unused parameters. */
-    "esModuleInterop": true
+    "esModuleInterop": true,
   },
   "include": ["src"],
   "exclude": ["node_modules", ".vscode-test", "src/scripts", "src/pdfjs-custom"],
-  "files": ["typings/common.d.ts"]
+  "files": ["typings/common.d.ts"],
 }

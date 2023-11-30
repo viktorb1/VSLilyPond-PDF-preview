@@ -72,7 +72,7 @@ const handleTextEditLinks = async () => {
         const match = textEditRegExp.exec(hyperlinks[i].href)
         if (match) {
           const codeLocation = getCodeLocationFromMatchGroups(
-            match as unknown as TextEditRegExpMatchType
+            match as unknown as TextEditRegExpMatchType,
           )
           hyperlinks[i].title = "Open in VSCode"
           hyperlinks[i].onclick = handleOnClick(codeLocation)
@@ -93,7 +93,7 @@ const handleRegisterLinks = async () => {
       const hyperlinks = annotationsLayerElem.getElementsByTagName("a")
       const registerLink = async (
         codeLocation: LilyPondCodeLocation,
-        elementID: string
+        elementID: string,
       ) => {
         const msg: WebviewVSCodeRegisterLinkMessage = {
           type: "register-link",
@@ -108,7 +108,7 @@ const handleRegisterLinks = async () => {
         if (match) {
           hyperlinks[i].id = hyperlinks[i].href
           const codeLocation = getCodeLocationFromMatchGroups(
-            match as unknown as TextEditRegExpMatchType
+            match as unknown as TextEditRegExpMatchType,
           )
           registerLink(codeLocation, hyperlinks[i].id)
         }
@@ -152,7 +152,7 @@ type PDFJSUserSettings = {
  * From config to PDFJS compliant settings
  */
 const shimUserSettings = (
-  settings: PDFViewerUserSettings
+  settings: PDFViewerUserSettings,
 ): PDFJSUserSettings => {
   const cursorToolsStringToEnum = (name: string) => {
     if (name === "hand") {
@@ -298,7 +298,7 @@ const handleLoad = async () => {
             // handle textedit links
             handleTextEditLinks()
           }
-        }
+        },
       )
     })
     .catch((err: any) => {

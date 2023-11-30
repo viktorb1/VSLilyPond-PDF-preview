@@ -6,5 +6,5 @@
     "inlineSourceMap": true,
   },
   "include": ["."],
-  "files": ["../../typings/common.d.ts"]
+  "files": ["../../typings/common.d.ts"],
 }

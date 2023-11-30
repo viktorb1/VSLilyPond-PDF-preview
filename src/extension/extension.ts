@@ -16,8 +16,8 @@ export const activate = (context: vscode.ExtensionContext) => {
           enableFindWidget: false, // default
           retainContextWhenHidden: true,
         },
-      }
-    )
+      },
+    ),
   )
 
   // Register command
@@ -28,11 +28,11 @@ export const activate = (context: vscode.ExtensionContext) => {
         await provider.goToPDFLocationFromCursor()
       } catch (err) {
         vscode.window.showErrorMessage(
-          `Unable to go to PDF Location from cursor: ${err}`
+          `Unable to go to PDF Location from cursor: ${err}`,
         )
         outputToChannel(`[ERROR]: ${err}`)
       }
-    }
+    },
   )
   context.subscriptions.push(goToPDFLocationCmd)
 }
