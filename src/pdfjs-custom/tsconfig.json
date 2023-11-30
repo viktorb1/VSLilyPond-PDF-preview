@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "moduleResolution": "node",
+    "moduleResolution": "nodenext",
+    "module": "NodeNext",
     "target": "es6",
     "outDir": "../../out/pdfjs-custom",
     "lib": ["dom", "DOM.Iterable"],
